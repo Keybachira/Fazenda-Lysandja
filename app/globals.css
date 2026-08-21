@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────
+   LYSANDJA — DESIGN SYSTEM
+   Rosa assinatura + Verde profundo + Madeira dourada
+   Editorial · Cinematográfico · Premium Africano
+   ────────────────────────────────────────────── */
+
+:root {
+  /* Core brand */
+  --lys-rosa: #E8467A;
+  --lys-rosa-deep: #C93A62;
+  --lys-rosa-soft: #FFF0F4;
+  --lys-rosa-muted: #FCE4EB;
+  --lys-rosa-ink: #5A1028;
+
+  --lys-verde: #0E2B22;
+  --lys-verde-mid: #1A4436;
+  --lys-verde-claro: #2E6B52;
+  --lys-verde-soft: #EAF2EE;
+  --lys-verde-faint: #F2F7F4;
+
+  --lys-madeira: #C8A55A;
+  --lys-madeira-deep: #8C6F2E;
+  --lys-madeira-soft: #F9F1DC;
+  --lys-madeira-muted: #EDE0BE;
+
+  /* Neutrals — warm editorial */
+  --lys-paper: #FDFBF7;
+  --lys-paper-2: #F6F1E7;
+  --lys-ink: #0E1A16;
+  --lys-ink-60: #5A6B64;
+  --lys-ink-40: #8FA099;
+  --lys-line: #E8E0D0;
+  --lys-line-2: #EDE8DD;
+  --lys-black: #0A0F0D;
+  --lys-white: #FFFFFF;
+}
+
+@theme inline {
+  --color-lys-rosa: var(--lys-rosa);
+  --color-lys-verde: var(--lys-verde);
+  --color-lys-madeira: var(--lys-madeira);
+  --color-lys-paper: var(--lys-paper);
+  --color-lys-ink: var(--lys-ink);
+  --color-background: var(--lys-paper);
+  --color-foreground: var(--lys-ink);
+
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
+
+  --breakpoint-xs: 360px;
+  --breakpoint-3xl: 1720px;
+}
+
+/* Base resets */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lys-line) transparent;
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--lys-paper);
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--lys-paper);
+  color: var(--lys-ink);
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background: var(--lys-rosa);
+  color: white;
+}
+
+/* ── Typography — Editorial scale ── */
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+/* H1 — enormous editorial */
+.text-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* Utility — hide scrollbar but keep scroll */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--lys-rosa);
+  outline-offset: 2px;
+}
+
+/* ── Anim helpers ── */
+.will-reveal {
+  will-change: transform, opacity, clip-path;
+}
+
+/* ── Grain / subtle noise via CSS (optional overlay) ── */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+/* ── Container system ── */
+.container-lys {
+  width: 100%;
+  max-width: 1720px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+@media (min-width: 768px) { .container-lys { padding-inline: 40px; } }
+@media (min-width: 1024px) { .container-lys { padding-inline: 48px; } }
+@media (min-width: 1440px) { .container-lys { padding-inline: 64px; } }
+
+/* ── Section rhythm ── */
+.section-lys {
+  padding-block: 80px;
+}
+@media (min-width: 768px) { .section-lys { padding-block: 120px; } }
+@media (min-width: 1024px) { .section-lys { padding-block: 160px; } }
+
+/* ── Hairlines ── */
+.hr-lys {
+  height: 1px;
+  background: var(--lys-line);
+  border: 0;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
