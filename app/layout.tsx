@@ -32,6 +32,12 @@ export const metadata: Metadata = {
       "Muito mais do que produzir. Conectamos terra, pessoas, tecnologia e conhecimento para construir a agricultura do futuro.",
     type: "website",
     locale: "pt_AO",
+    images: {
+      url: "/logo-fr.png",
+    },
+  },
+  icons: {
+    icon: "/logo-full.jpeg",
   },
   robots: { index: true, follow: true },
 };

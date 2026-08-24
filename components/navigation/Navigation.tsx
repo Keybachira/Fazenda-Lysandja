@@ -48,20 +48,14 @@ export function Navigation() {
         />
 
         <div className="container-lys relative flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="group relative flex items-center gap-3"
-            aria-label="Lysandja — Home"
-          >
-            <span className="font-display text-[22px] md:text-[26px] font-[300] tracking-[0.18em] text-[var(--lys-verde)]">
-              LYSANDJA
-            </span>
-            <span className="hidden sm:inline-block h-[1px] w-8 bg-[var(--lys-rosa)] opacity-60 group-hover:w-12 transition-all duration-500" />
-            <span className="hidden lg:inline text-[10px] tracking-[0.24em] text-[var(--lys-ink-40)] uppercase">
-              Onde a terra ganha propósito
-            </span>
-          </Link>
+{/* Logo */}
+        <Link
+          href="/"
+          className="group relative flex items-center gap-3"
+          aria-label="Lysandja — Home"
+        >
+          <img src="/logo-fr.png" alt="Lysandja logo" className="h-[24px] w-auto sm:h-[28px]" />
+        </Link>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-8" aria-label="Principal">
