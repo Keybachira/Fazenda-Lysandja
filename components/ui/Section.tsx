@@ -41,3 +41,26 @@ export function SectionNumber({ n, light = false }: { n: string; light?: boolean
     </span>
   );
 }
+
+/* ── Ghost word — large background typography ── */
+export function GhostWord({
+  children,
+  color = "verde",
+  className = "",
+  style = {},
+}: {
+  children: React.ReactNode;
+  color?: "verde" | "paper" | "madeira" | "rosa" | "dark";
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <span
+      aria-hidden
+      className={`ghost-word ghost-word--${color} ${className}`}
+      style={style}
+    >
+      {children}
+    </span>
+  );
+}
