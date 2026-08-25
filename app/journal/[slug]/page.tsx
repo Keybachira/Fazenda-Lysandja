@@ -1,9 +1,17 @@
-import { posts } from "@/content/journal";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { posts } from "@/content/journal";
+import { Section, Eyebrow, Display, Lead, ScrollReveal } from "@/components/ui";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
+  return { title: post?.title ?? "Journal" };
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -13,24 +21,34 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return (
     <article className="bg-[var(--lys-paper)]">
-      <div className="pt-[112px]">
+      <Section bleed className="pt-[112px] pb-10 bg-[var(--lys-paper-2)] border-b border-[var(--lys-line)]">
         <div className="container-lys">
-          <Link href="/journal" className="text-[11px] tracking-[0.16em] uppercase text-[var(--lys-ink-40)] hover:text-[var(--lys-verde)]">
-            ← Voltar ao Journal
-          </Link>
-          <p className="mt-6 text-[11px] tracking-[0.22em] uppercase text-[var(--lys-rosa)] font-semibold">{post.category} · {post.date}</p>
-          <h1 className="mt-3 font-display text-[42px] md:text-[64px] leading-[0.85] tracking-[-0.04em] uppercase text-[var(--lys-verde)] max-w-[800px]">
-            {post.title}
-          </h1>
-          <p className="mt-4 max-w-[640px] text-[16px] leading-7 text-[var(--lys-ink-60)]">{post.excerpt}</p>
+          <ScrollReveal direction="up">
+            <Link href="/journal" className="text-[11px] tracking-[0.16em] uppercase text-[var(--lys-ink-40)] hover:text-[var(--lys-verde)] transition-colors">
+              ← Voltar ao Journal
+            </Link>
+            <Eyebrow className="mt-6">{post.category} · {post.date}</Eyebrow>
+            <Display as="h1" className="mt-3 text-[clamp(42px,6vw,64px)] max-w-[800px]">
+              {post.title}
+            </Display>
+            <Lead className="mt-4 max-w-[640px]">{post.excerpt}</Lead>
+          </ScrollReveal>
         </div>
-      </div>
+      </Section>
 
-      <div className="container-lys mt-8">
-        <div className="overflow-hidden rounded-[20px] aspect-[16/9] bg-neutral-200">
-          {/* eslint-disable @next/next/no-img-element */}
-          <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
-        </div>
+      <Section>
+        <ScrollReveal direction="up">
+          <div className="overflow-hidden rounded-[20px] aspect-[16/9] bg-neutral-200 relative">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 80vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </ScrollReveal>
         <div className="prose prose-neutral max-w-[720px] mx-auto mt-10 pb-16">
           <p className="text-[15px] leading-8 text-[var(--lys-ink-60)]">
             Conteúdo completo em preparação editorial. Esta estrutura já suporta CMS futuro (Supabase / headless). Por enquanto, demonstra tipografia, ritmo e hierarquia Lysandja.
@@ -39,7 +57,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             TODO: integrar conteúdo oficial do Journal Lysandja.
           </p>
         </div>
-      </div>
+      </Section>
     </article>
   );
 }

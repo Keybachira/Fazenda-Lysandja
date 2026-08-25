@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -8,9 +9,13 @@ export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const el = ref.current;
     if (!el) return;
+
     const ctx = gsap.context(() => {
+      if (prefersReduced) return;
+
       gsap.fromTo(
         "[data-hero-line]",
         { y: 80, opacity: 0 },
@@ -34,12 +39,14 @@ export function Hero() {
     <section ref={ref} className="relative h-[100svh] min-h-[620px] overflow-hidden bg-[var(--lys-verde)]">
       {/* Background */}
       <div className="absolute inset-0">
-        {/* eslint-disable @next/next/no-img-element */}
-        <img
+        <Image
           data-hero-bg
           src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=2000&q=80&auto=format&fit=crop"
           alt="Paisagem agrícola angolana ao nascer do sol — campos abertos e horizonte"
-          className="h-full w-full object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--lys-verde)] via-[var(--lys-verde)]/35 to-black/10" />
         <div className="absolute inset-0 bg-[var(--lys-rosa)]/10 mix-blend-multiply" />

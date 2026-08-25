@@ -23,9 +23,9 @@ export function Section({
   );
 }
 
-export function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+export function Eyebrow({ children, light = false, className = "" }: { children: React.ReactNode; light?: boolean; className?: string }) {
   return (
-    <p className={`text-[10px] md:text-[11px] tracking-[0.24em] uppercase font-semibold ${light ? "text-[var(--lys-rosa)]" : "text-[var(--lys-rosa)]"}`}>
+    <p className={`text-[10px] md:text-[11px] tracking-[0.24em] uppercase font-semibold ${light ? "text-[var(--lys-rosa)]" : "text-[var(--lys-rosa)]"} ${className}`}>
       {children}
     </p>
   );
