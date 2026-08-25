@@ -22,7 +22,7 @@ export const DURATION = {
 export function revealTitle(
   el: Element,
   trigger: Element,
-  opts?: Partial<gsap.TweenVars>
+  opts?: Partial<gsap.TweenVars>,
 ) {
   return gsap.fromTo(
     el,
@@ -37,7 +37,7 @@ export function revealTitle(
         toggleActions: "play none none reverse",
       },
       ...opts,
-    }
+    },
   );
 }
 
@@ -45,7 +45,7 @@ export function revealTitle(
 export function revealText(
   el: Element,
   trigger: Element,
-  opts?: Partial<gsap.TweenVars>
+  opts?: Partial<gsap.TweenVars>,
 ) {
   return gsap.fromTo(
     el,
@@ -61,7 +61,7 @@ export function revealText(
         toggleActions: "play none none reverse",
       },
       ...opts,
-    }
+    },
   );
 }
 
@@ -69,7 +69,7 @@ export function revealText(
 export function revealAccent(
   el: Element,
   trigger: Element,
-  opts?: Partial<gsap.TweenVars>
+  opts?: Partial<gsap.TweenVars>,
 ) {
   return gsap.fromTo(
     el,
@@ -85,7 +85,7 @@ export function revealAccent(
         toggleActions: "play none none reverse",
       },
       ...opts,
-    }
+    },
   );
 }
 
@@ -93,7 +93,7 @@ export function revealAccent(
 export function revealCTA(
   el: Element,
   trigger: Element,
-  opts?: Partial<gsap.TweenVars>
+  opts?: Partial<gsap.TweenVars>,
 ) {
   return gsap.fromTo(
     el,
@@ -109,16 +109,12 @@ export function revealCTA(
         toggleActions: "play none none reverse",
       },
       ...opts,
-    }
+    },
   );
 }
 
 /* ── Parallax: scrub y translation ── */
-export function parallaxY(
-  el: Element,
-  container: Element,
-  offset = "-8%"
-) {
+export function parallaxY(el: Element, container: Element, offset = "-8%") {
   return gsap.to(el, {
     y: offset,
     ease: "none",
@@ -140,24 +136,35 @@ export function imageReveal(
     to?: string;
     scale?: [number, number];
     duration?: number;
-  }
+  },
 ) {
-  const { from = "inset(100% 0 0 0)", to = "inset(0% 0 0 0)", scale = [1.1, 1], duration = DURATION.reveal } = opts || {};
+  const {
+    from = "inset(100% 0 0 0)",
+    to = "inset(0% 0 0 0)",
+    scale = [1.1, 1],
+    duration = DURATION.reveal,
+  } = opts || {};
 
-  return gsap.timeline({
-    scrollTrigger: {
-      trigger,
-      start: "top 80%",
-      toggleActions: "play none none reverse",
-    },
-  }).fromTo(el, { clipPath: from, scale: scale[0] }, { clipPath: to, scale: scale[1], duration, ease: EASE.out });
+  return gsap
+    .timeline({
+      scrollTrigger: {
+        trigger,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    })
+    .fromTo(
+      el,
+      { clipPath: from, scale: scale[0] },
+      { clipPath: to, scale: scale[1], duration, ease: EASE.out },
+    );
 }
 
 /* ── Image depth: subtle scale + translate on scroll ── */
 export function imageDepth(
   el: Element,
   container: Element,
-  opts?: { scale?: [number, number]; y?: string }
+  opts?: { scale?: [number, number]; y?: string },
 ) {
   const { scale = [1, 1.08], y = "-30px" } = opts || {};
 
@@ -174,12 +181,16 @@ export function imageDepth(
         end: "bottom top",
         scrub: 1,
       },
-    }
+    },
   );
 }
 
 /* ── Ghost word parallax ── */
-export function ghostWordParallax(el: Element, container: Element, speed = "15%") {
+export function ghostWordParallax(
+  el: Element,
+  container: Element,
+  speed = "15%",
+) {
   return gsap.to(el, {
     y: speed,
     ease: "none",
@@ -196,7 +207,7 @@ export function ghostWordParallax(el: Element, container: Element, speed = "15%"
 export function sectionEntrance(
   container: Element,
   selector: string,
-  opts?: Partial<gsap.TweenVars>
+  opts?: Partial<gsap.TweenVars>,
 ) {
   const els = container.querySelectorAll(selector);
   if (!els.length) return;
@@ -216,7 +227,7 @@ export function sectionEntrance(
         toggleActions: "play none none reverse",
       },
       ...opts,
-    }
+    },
   );
 }
 
@@ -224,7 +235,7 @@ export function sectionEntrance(
 export function horizontalScroll(
   container: Element,
   track: Element,
-  opts?: { snap?: boolean }
+  opts?: { snap?: boolean },
 ) {
   const totalWidth = (track as HTMLElement).scrollWidth;
   const viewportWidth = window.innerWidth;

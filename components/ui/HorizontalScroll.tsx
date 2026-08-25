@@ -41,7 +41,9 @@ export function HorizontalScroll({
           scrub: 1,
           pin: true,
           anticipatePin: 1,
-          ...(snap ? { snap: 1 / ((totalWidth - viewportWidth) / viewportWidth) } : {}),
+          ...(snap
+            ? { snap: 1 / ((totalWidth - viewportWidth) / viewportWidth) }
+            : {}),
         },
       });
     }, container);
@@ -83,10 +85,7 @@ export function HorizontalCard({
   width = "520px",
 }: HorizontalCardProps) {
   return (
-    <div
-      className={`shrink-0 ${className}`}
-      style={{ width }}
-    >
+    <div className={`shrink-0 ${className}`} style={{ width }}>
       {children}
     </div>
   );

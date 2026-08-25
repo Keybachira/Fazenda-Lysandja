@@ -7,8 +7,7 @@ type Size = "sm" | "md" | "lg";
 const variantClasses: Record<Variant, string> = {
   primary:
     "bg-[var(--lys-rosa)] text-white hover:bg-[var(--lys-rosa-deep)] border border-transparent",
-  dark:
-    "bg-[var(--lys-verde)] text-white hover:bg-[var(--lys-verde-mid)] border border-transparent",
+  dark: "bg-[var(--lys-verde)] text-white hover:bg-[var(--lys-verde-mid)] border border-transparent",
   ghost:
     "bg-transparent text-[var(--lys-verde)] hover:bg-[var(--lys-rosa-soft)] border border-transparent",
   outline:
@@ -30,8 +29,16 @@ export function Button({
   size = "md",
   className = "",
   ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant; size?: Size }) {
-  return <button className={`${baseClasses(variant, size)} ${className}`} {...props} />;
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: Variant;
+  size?: Size;
+}) {
+  return (
+    <button
+      className={`${baseClasses(variant, size)} ${className}`}
+      {...props}
+    />
+  );
 }
 
 export function ButtonLink({
@@ -41,9 +48,19 @@ export function ButtonLink({
   className = "",
   children,
   ...props
-}: { href: string; variant?: Variant; size?: Size; className?: string; children: React.ReactNode } & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
+}: {
+  href: string;
+  variant?: Variant;
+  size?: Size;
+  className?: string;
+  children: React.ReactNode;
+} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
   return (
-    <Link href={href} className={`${baseClasses(variant, size)} ${className}`} {...props}>
+    <Link
+      href={href}
+      className={`${baseClasses(variant, size)} ${className}`}
+      {...props}
+    >
       {children}
     </Link>
   );

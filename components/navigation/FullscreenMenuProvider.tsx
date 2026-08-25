@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { FullscreenMenu } from "./FullscreenMenu";
 
 interface MenuCtx {
@@ -26,7 +32,9 @@ export function FullscreenMenuProvider() {
     } else {
       document.documentElement.style.overflow = "";
     }
-    return () => { document.documentElement.style.overflow = ""; };
+    return () => {
+      document.documentElement.style.overflow = "";
+    };
   }, [open]);
 
   return (

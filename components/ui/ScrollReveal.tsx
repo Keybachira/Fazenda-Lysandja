@@ -9,11 +9,24 @@ import { EASE, DURATION } from "@/lib/animations";
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
-  as?: "div" | "section" | "article" | "aside" | "main" | "nav" | "header" | "footer";
+  as?:
+    | "div"
+    | "section"
+    | "article"
+    | "aside"
+    | "main"
+    | "nav"
+    | "header"
+    | "footer";
   id?: string;
 }
 
-export function ScrollReveal({ children, className = "", as = "div", id }: ScrollRevealProps) {
+export function ScrollReveal({
+  children,
+  className = "",
+  as = "div",
+  id,
+}: ScrollRevealProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ref = useRef<any>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -39,7 +52,7 @@ export function ScrollReveal({ children, className = "", as = "div", id }: Scrol
               start: "top 80%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
 
@@ -61,7 +74,7 @@ export function ScrollReveal({ children, className = "", as = "div", id }: Scrol
               start: "top 80%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
 
@@ -82,7 +95,7 @@ export function ScrollReveal({ children, className = "", as = "div", id }: Scrol
               start: "top 80%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
 
@@ -104,7 +117,7 @@ export function ScrollReveal({ children, className = "", as = "div", id }: Scrol
               start: "top 80%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       }
 
@@ -117,7 +130,9 @@ export function ScrollReveal({ children, className = "", as = "div", id }: Scrol
           y: offset,
           ease: "none",
           scrollTrigger: {
-            trigger: htmlEl.closest("[data-parallax-container]") || htmlEl.parentElement,
+            trigger:
+              htmlEl.closest("[data-parallax-container]") ||
+              htmlEl.parentElement,
             start: "top bottom",
             end: "bottom top",
             scrub: 1,
@@ -129,7 +144,8 @@ export function ScrollReveal({ children, className = "", as = "div", id }: Scrol
       const depthImages = el.querySelectorAll("[data-image-depth]");
       depthImages.forEach((img: Element) => {
         const htmlEl = img as HTMLElement;
-        const container = htmlEl.closest("[data-parallax-container]") || htmlEl.parentElement;
+        const container =
+          htmlEl.closest("[data-parallax-container]") || htmlEl.parentElement;
         if (!container) return;
         const scaleMax = parseFloat(htmlEl.dataset.imageDepth || "1.08");
         gsap.fromTo(
@@ -145,7 +161,7 @@ export function ScrollReveal({ children, className = "", as = "div", id }: Scrol
               end: "bottom top",
               scrub: 1,
             },
-          }
+          },
         );
       });
 

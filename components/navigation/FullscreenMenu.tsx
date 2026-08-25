@@ -14,10 +14,20 @@ const MENU_ITEMS = [
   { href: "/fazenda", label: "A Fazenda", kicker: "Território", number: "01" },
   { href: "/producao", label: "Produção", kicker: "Culturas", number: "02" },
   { href: "/impacto", label: "Impacto", kicker: "Números", number: "03" },
-  { href: "/sustentabilidade", label: "Sustentabilidade", kicker: "Futuro", number: "04" },
+  {
+    href: "/sustentabilidade",
+    label: "Sustentabilidade",
+    kicker: "Futuro",
+    number: "04",
+  },
   { href: "/journal", label: "Journal", kicker: "Histórias", number: "05" },
   { href: "/galeria", label: "Galeria", kicker: "Imagens", number: "06" },
-  { href: "/contacto", label: "Contacto", kicker: "Fale connosco", number: "07" },
+  {
+    href: "/contacto",
+    label: "Contacto",
+    kicker: "Fale connosco",
+    number: "07",
+  },
 ];
 
 export function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
@@ -47,35 +57,59 @@ export function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
             "[data-menu-overlay]",
             { opacity: 0 },
             { opacity: 1, duration: 0.4, ease: "power2.out" },
-            0
+            0,
           )
           .fromTo(
             "[data-menu-bg]",
             { y: "-100%" },
             { y: "0%", duration: 0.6, ease: "power3.out" },
-            0
+            0,
           )
           .fromTo(
             "[data-menu-item]",
             { x: -40, opacity: 0 },
-            { x: 0, opacity: 1, duration: 0.5, stagger: 0.04, ease: "power3.out" },
-            0.3
+            {
+              x: 0,
+              opacity: 1,
+              duration: 0.5,
+              stagger: 0.04,
+              ease: "power3.out",
+            },
+            0.3,
           )
           .fromTo(
             "[data-menu-meta]",
             { opacity: 0 },
             { opacity: 1, duration: 0.4, stagger: 0.05, ease: "power2.out" },
-            0.5
+            0.5,
           );
       } else {
         const tl = gsap.timeline({
           onComplete: () => gsap.set(el, { visibility: "hidden" }),
         });
 
-        tl.to("[data-menu-item]", { x: 40, opacity: 0, duration: 0.3, stagger: 0.02, ease: "power2.in" }, 0)
+        tl.to(
+          "[data-menu-item]",
+          {
+            x: 40,
+            opacity: 0,
+            duration: 0.3,
+            stagger: 0.02,
+            ease: "power2.in",
+          },
+          0,
+        )
           .to("[data-menu-meta]", { opacity: 0, duration: 0.2 }, 0)
-          .to("[data-menu-overlay]", { opacity: 0, duration: 0.3, ease: "power2.in" }, 0.1)
-          .to("[data-menu-bg]", { y: "100%", duration: 0.5, ease: "power3.in" }, 0.1);
+          .to(
+            "[data-menu-overlay]",
+            { opacity: 0, duration: 0.3, ease: "power2.in" },
+            0.1,
+          )
+          .to(
+            "[data-menu-bg]",
+            { y: "100%", duration: 0.5, ease: "power3.in" },
+            0.1,
+          );
       }
     }, el);
 
@@ -83,7 +117,12 @@ export function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
   }, [open, prefersReducedMotion]);
 
   return (
-    <div ref={ref} className="fixed inset-0 z-[60] hidden lg:block" style={{ visibility: "hidden" }} aria-hidden={!open}>
+    <div
+      ref={ref}
+      className="fixed inset-0 z-[60] hidden lg:block"
+      style={{ visibility: "hidden" }}
+      aria-hidden={!open}
+    >
       {/* overlay */}
       <div
         data-menu-overlay
@@ -92,11 +131,19 @@ export function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
       />
 
       {/* panel */}
-      <div data-menu-bg className="absolute right-0 top-0 bottom-0 w-[720px] bg-[var(--lys-paper)] shadow-[-20px_0_60px_rgba(0,0,0,0.15)]">
+      <div
+        data-menu-bg
+        className="absolute right-0 top-0 bottom-0 w-[720px] bg-[var(--lys-paper)] shadow-[-20px_0_60px_rgba(0,0,0,0.15)]"
+      >
         <div className="h-full flex flex-col justify-between p-10 md:p-14">
           {/* header */}
           <div className="flex items-start justify-between mb-10">
-            <p data-menu-meta className="text-[10px] tracking-[0.24em] uppercase text-[var(--lys-ink-40)]">Navegação</p>
+            <p
+              data-menu-meta
+              className="text-[10px] tracking-[0.24em] uppercase text-[var(--lys-ink-40)]"
+            >
+              Navegação
+            </p>
             <button
               onClick={onClose}
               aria-label="Fechar menu"
@@ -110,7 +157,10 @@ export function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
           </div>
 
           {/* nav items */}
-          <nav className="flex-1 flex flex-col justify-center" aria-label="Menu principal">
+          <nav
+            className="flex-1 flex flex-col justify-center"
+            aria-label="Menu principal"
+          >
             {MENU_ITEMS.map((item) => (
               <Link
                 key={item.href}
@@ -131,7 +181,10 @@ export function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
 
           {/* footer meta */}
           <div className="flex items-center justify-between mt-8">
-            <p data-menu-meta className="text-[11px] tracking-[0.12em] text-[var(--lys-ink-40)]">
+            <p
+              data-menu-meta
+              className="text-[11px] tracking-[0.12em] text-[var(--lys-ink-40)]"
+            >
               © {new Date().getFullYear()} Fazenda Lysandja · Angola
             </p>
             <div className="flex items-center gap-4">
@@ -142,7 +195,12 @@ export function FullscreenMenu({ open, onClose }: FullscreenMenuProps) {
               >
                 hello@lysandja.ao
               </a>
-              <span data-menu-meta className="text-[10px] tracking-[0.2em] uppercase text-[var(--lys-ink-40)]">Huambo · Bié</span>
+              <span
+                data-menu-meta
+                className="text-[10px] tracking-[0.2em] uppercase text-[var(--lys-ink-40)]"
+              >
+                Huambo · Bié
+              </span>
             </div>
           </div>
         </div>

@@ -23,15 +23,29 @@ export function Section({
   );
 }
 
-export function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+export function Eyebrow({
+  children,
+  light = false,
+}: {
+  children: React.ReactNode;
+  light?: boolean;
+}) {
   return (
-    <p className={`text-[10px] md:text-[11px] tracking-[0.24em] uppercase font-semibold ${light ? "text-[var(--lys-rosa)]" : "text-[var(--lys-rosa)]"}`}>
+    <p
+      className={`text-[10px] md:text-[11px] tracking-[0.24em] uppercase font-semibold ${light ? "text-[var(--lys-rosa)]" : "text-[var(--lys-rosa)]"}`}
+    >
       {children}
     </p>
   );
 }
 
-export function SectionNumber({ n, light = false }: { n: string; light?: boolean }) {
+export function SectionNumber({
+  n,
+  light = false,
+}: {
+  n: string;
+  light?: boolean;
+}) {
   return (
     <span
       aria-hidden

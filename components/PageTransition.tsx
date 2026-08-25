@@ -51,7 +51,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         duration: 0.3,
         ease: "power2.in",
       },
-      "<"
+      "<",
     );
 
     // Phase 2: swap content at peak
@@ -75,7 +75,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         duration: 0.5,
         ease: "power2.out",
       },
-      "<0.1"
+      "<0.1",
     );
 
     // Phase 4: reset overlay
@@ -96,9 +96,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* Content */}
-      <div ref={contentRef}>
-        {children}
-      </div>
+      <div ref={contentRef}>{children}</div>
     </>
   );
 }

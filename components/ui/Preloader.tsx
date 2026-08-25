@@ -37,7 +37,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
       "[data-preloader-text]",
       { clipPath: "inset(0 0 100% 0)" },
       { clipPath: "inset(0 0 0% 0)", duration: 0.8, ease: "power3.out" },
-      0
+      0,
     );
 
     // 2. Subtle line accent appears
@@ -45,7 +45,7 @@ export function Preloader({ onComplete }: PreloaderProps) {
       "[data-preloader-line]",
       { scaleX: 0 },
       { scaleX: 1, duration: 0.6, ease: "power2.out" },
-      0.4
+      0.4,
     );
 
     // 3. Hold for a beat

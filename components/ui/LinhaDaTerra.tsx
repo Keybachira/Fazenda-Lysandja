@@ -29,7 +29,7 @@ export function LinhaDaTerra() {
             end: "bottom bottom",
             scrub: 2,
           },
-        }
+        },
       );
     });
 
@@ -47,7 +47,8 @@ export function LinhaDaTerra() {
         ref={lineRef}
         className="h-full will-change-transform"
         style={{
-          background: "linear-gradient(90deg, var(--lys-verde) 0%, var(--lys-rosa) 50%, var(--lys-madeira) 100%)",
+          background:
+            "linear-gradient(90deg, var(--lys-verde) 0%, var(--lys-rosa) 50%, var(--lys-madeira) 100%)",
           opacity: 0.5,
         }}
       />

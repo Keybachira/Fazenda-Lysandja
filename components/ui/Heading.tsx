@@ -63,8 +63,10 @@ export function Utility({
   variant?: "kicker" | "label" | "meta";
 }) {
   const variantClasses = {
-    kicker: "text-[12px] tracking-[0.32em] uppercase font-semibold text-[var(--lys-madeira)]",
-    label: "text-[10px] tracking-[0.24em] uppercase font-medium text-[var(--lys-ink-40)]",
+    kicker:
+      "text-[12px] tracking-[0.32em] uppercase font-semibold text-[var(--lys-madeira)]",
+    label:
+      "text-[10px] tracking-[0.24em] uppercase font-medium text-[var(--lys-ink-40)]",
     meta: "text-[11px] tracking-[0.18em] uppercase font-medium text-[var(--lys-ink-60)]",
   };
 
@@ -76,9 +78,19 @@ export function Utility({
 }
 
 /* ── Lead — body-level intro ── */
-export function Lead({ children, className = "", light = false }: { children: React.ReactNode; className?: string; light?: boolean }) {
+export function Lead({
+  children,
+  className = "",
+  light = false,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  light?: boolean;
+}) {
   return (
-    <p className={`text-[17px] md:text-[19px] leading-8 ${light ? "text-white/70" : "text-[var(--lys-ink-60)]"} ${className}`}>
+    <p
+      className={`text-[17px] md:text-[19px] leading-8 ${light ? "text-white/70" : "text-[var(--lys-ink-60)]"} ${className}`}
+    >
       {children}
     </p>
   );

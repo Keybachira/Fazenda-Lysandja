@@ -79,7 +79,10 @@ export function CustomCursor() {
   if (typeof window !== "undefined" && "ontouchstart" in window) return null;
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[100] hidden md:block" aria-hidden>
+    <div
+      className="pointer-events-none fixed inset-0 z-[100] hidden md:block"
+      aria-hidden
+    >
       {/* Inner dot — sparkle */}
       <div
         ref={dotRef}
@@ -107,9 +110,18 @@ export function CustomCursor() {
       {/* Hover sparkle particles */}
       {hovering && (
         <>
-          <div className="absolute w-1 h-1 rounded-full bg-[var(--lys-rosa)]/40 animate-ping" style={{ left: "50%", top: "50%" }} />
-          <div className="absolute w-0.5 h-0.5 rounded-full bg-[var(--lys-madeira)]/60 animate-pulse" style={{ left: "30%", top: "40%" }} />
-          <div className="absolute w-0.5 h-0.5 rounded-full bg-[var(--lys-rosa)]/30 animate-pulse" style={{ left: "70%", top: "60%" }} />
+          <div
+            className="absolute w-1 h-1 rounded-full bg-[var(--lys-rosa)]/40 animate-ping"
+            style={{ left: "50%", top: "50%" }}
+          />
+          <div
+            className="absolute w-0.5 h-0.5 rounded-full bg-[var(--lys-madeira)]/60 animate-pulse"
+            style={{ left: "30%", top: "40%" }}
+          />
+          <div
+            className="absolute w-0.5 h-0.5 rounded-full bg-[var(--lys-rosa)]/30 animate-pulse"
+            style={{ left: "70%", top: "60%" }}
+          />
         </>
       )}
     </div>
