@@ -45,7 +45,7 @@ export default function ProducaoPage() {
                 </div>
                 <div>
                   <SectionNumber n={c.n} />
-                  <Display as="h2" className="-mt-4 text-[clamp(40px,4vw,44px)]">
+                  <Display as="h2" className="-mt-4 text-[clamp(32px,5vw,56px)]">
                     {c.title}
                   </Display>
                   <Lead className="mt-4 max-w-[480px]">

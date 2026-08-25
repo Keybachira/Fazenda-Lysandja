@@ -24,7 +24,7 @@ export default function ImpactoPage() {
 
       {/* Metrics */}
       <Section>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { v: "—", k: "Hectares", d: "Área total e cultivável" },
             { v: "—", k: "Pessoas", d: "Equipa e famílias impactadas" },
@@ -33,7 +33,7 @@ export default function ImpactoPage() {
           ].map((s, i) => (
             <ScrollReveal key={s.k} direction="up" delay={i * 0.08}>
               <div className="rounded-[18px] border border-[var(--lys-line)] bg-white p-7">
-                <p className="font-display text-[56px] leading-none tracking-[-0.05em] text-[var(--lys-verde)]">{s.v}</p>
+                <p className="font-display text-[clamp(36px,7vw,56px)] leading-none tracking-[-0.05em] text-[var(--lys-verde)]">{s.v}</p>
                 <p className="mt-2 text-[11px] tracking-[0.2em] uppercase text-[var(--lys-rosa)] font-semibold">{s.k}</p>
                 <p className="mt-2 text-[12px] text-[var(--lys-ink-60)]">{s.d}</p>
               </div>
@@ -44,7 +44,7 @@ export default function ImpactoPage() {
         {/* Biodiversidade */}
         <div className="mt-14 grid md:grid-cols-2 gap-6">
           <ScrollReveal direction="left">
-            <div className="rounded-[20px] overflow-hidden bg-[var(--lys-verde-soft)] p-8">
+            <div className="rounded-[20px] overflow-hidden bg-[var(--lys-verde-soft)] p-5 md:p-8">
               <Eyebrow>Biodiversidade</Eyebrow>
               <Display as="h3" className="mt-2 text-[clamp(24px,3vw,28px)]">
                 A terra também é<br />um ecossistema.

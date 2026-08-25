@@ -32,7 +32,7 @@ export default function JournalPage() {
                 <button
                   key={c}
                   onClick={() => setActive(c)}
-                  className={`rounded-full border px-4 py-2 text-[11px] tracking-[0.12em] uppercase font-semibold transition-all ${
+                  className={`rounded-full border px-4 py-3 text-[11px] tracking-[0.12em] uppercase font-semibold transition-all ${
                     active === c
                       ? "border-[var(--lys-verde)] bg-[var(--lys-verde)] text-white"
                       : "border-[var(--lys-line)] bg-white text-[var(--lys-ink-60)] hover:border-[var(--lys-rosa)] hover:text-[var(--lys-rosa)]"
@@ -63,7 +63,7 @@ export default function JournalPage() {
                 </div>
                 <div className="p-7 md:p-8 flex flex-col justify-center">
                   <p className="text-[10px] tracking-[0.2em] uppercase text-[var(--lys-rosa)] font-semibold">{featured.category}</p>
-                  <h2 className="mt-2 font-display text-[32px] leading-none tracking-[-0.03em] text-[var(--lys-verde)] group-hover:text-[var(--lys-rosa)] transition-colors">{featured.title}</h2>
+                  <h2 className="mt-2 font-display text-[clamp(24px,4vw,32px)] leading-none tracking-[-0.03em] text-[var(--lys-verde)] group-hover:text-[var(--lys-rosa)] transition-colors">{featured.title}</h2>
                   <p className="mt-3 text-[14px] leading-6 text-[var(--lys-ink-60)]">{featured.excerpt}</p>
                   <span className="mt-4 text-[11px] tracking-[0.14em] uppercase font-semibold text-[var(--lys-verde)]">Ler artigo →</span>
                 </div>

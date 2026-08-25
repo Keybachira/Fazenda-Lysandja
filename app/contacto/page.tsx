@@ -28,7 +28,7 @@ export default function ContactoPage() {
             <div className="space-y-8">
               <div>
                 <p className="text-[11px] tracking-[0.22em] uppercase text-[var(--lys-rosa)] font-semibold">Email</p>
-                <a href="mailto:info@fazendalysandja.co.ao" className="mt-1 block font-display text-[24px] text-[var(--lys-verde)] hover:text-[var(--lys-rosa)] transition-colors">
+                <a href="mailto:info@fazendalysandja.co.ao" className="mt-1 block font-display text-[24px] text-[var(--lys-verde)] hover:text-[var(--lys-rosa)] transition-colors break-all">
                   info@fazendalysandja.co.ao
                 </a>
               </div>
@@ -66,7 +66,7 @@ export default function ContactoPage() {
                 <label className="text-[11px] tracking-[0.14em] uppercase text-[var(--lys-ink-60)] font-semibold">Mensagem</label>
                 <textarea rows={5} className="mt-2 w-full rounded-lg border border-[var(--lys-line)] bg-[var(--lys-paper)] px-4 py-3 text-[14px] focus:outline-none focus:border-[var(--lys-rosa)] transition-colors resize-none" />
               </div>
-              <button type="submit" className="w-full rounded-full bg-[var(--lys-verde)] text-white py-3 text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[var(--lys-verde-deep)] transition-colors">
+              <button type="submit" className="w-full rounded-full bg-[var(--lys-verde)] text-white py-4 text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[var(--lys-verde-deep)] transition-colors">
                 Enviar mensagem
               </button>
             </form>

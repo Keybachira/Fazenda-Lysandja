@@ -65,7 +65,7 @@ export default function GaleriaPage() {
                     className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
                   />
                 </div>
-                <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[10px] tracking-[0.12em] uppercase font-semibold text-[var(--lys-verde)] opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[10px] tracking-[0.12em] uppercase font-semibold text-[var(--lys-verde)] opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity z-10">
                   Ver →
                 </span>
               </button>
@@ -82,21 +82,21 @@ export default function GaleriaPage() {
         >
           <button
             onClick={close}
-            className="absolute right-5 top-5 h-10 w-10 rounded-full bg-white text-[var(--lys-verde)] grid place-items-center text-[14px] font-bold hover:bg-[var(--lys-paper)] transition-colors z-10"
+            className="absolute right-5 top-5 h-11 w-11 rounded-full bg-white text-[var(--lys-verde)] grid place-items-center text-[14px] font-bold hover:bg-[var(--lys-paper)] transition-colors z-10"
             aria-label="Fechar"
           >
             ✕
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); prev(); }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/20 text-white grid place-items-center text-[18px] hover:bg-white/40 transition-colors z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/20 text-white grid place-items-center text-[18px] hover:bg-white/40 transition-colors z-10"
             aria-label="Anterior"
           >
             ‹
           </button>
           <button
             onClick={(e) => { e.stopPropagation(); next(); }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-white/20 text-white grid place-items-center text-[18px] hover:bg-white/40 transition-colors z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-white/20 text-white grid place-items-center text-[18px] hover:bg-white/40 transition-colors z-10"
             aria-label="Próxima"
           >
             ›

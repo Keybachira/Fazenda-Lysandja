@@ -129,7 +129,7 @@ export default function Home() {
 
               <ScrollReveal direction="right" delay={0.2} className="rounded-[20px] bg-[var(--lys-rosa)] p-7 md:p-8 flex flex-col justify-between min-h-[180px]">
                 <p className="text-[11px] tracking-[0.22em] uppercase text-white/80">Compromisso</p>
-                <p className="font-display text-[28px] leading-[0.95] text-white">
+                <p className="font-display text-[clamp(22px,3vw,28px)] leading-[0.95] text-white">
                   Produzir<br /> preservando.
                 </p>
                 <Link href="/sustentabilidade" className="mt-4 inline-flex text-[11px] tracking-[0.16em] uppercase font-semibold text-white border-b border-white/40 pb-1 w-fit">
@@ -175,7 +175,7 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <p className="text-[10px] tracking-[0.2em] uppercase text-[var(--lys-ink-40)]">{c.kicker}</p>
-                  <h3 className="mt-2 font-display text-[28px] leading-none tracking-[-0.03em] text-[var(--lys-verde)] group-hover:text-[var(--lys-rosa)] transition-colors">
+                  <h3 className="mt-2 font-display text-[clamp(22px,3vw,28px)] leading-none tracking-[-0.03em] text-[var(--lys-verde)] group-hover:text-[var(--lys-rosa)] transition-colors">
                     {c.title}
                   </h3>
                   <p className="mt-3 text-[13px] leading-6 text-[var(--lys-ink-60)] line-clamp-3">{c.desc}</p>
@@ -191,7 +191,7 @@ export default function Home() {
 
       {/* ── 04 — PESSOAS ── */}
       <Section className="overflow-hidden" id="pessoas">
-        <div className="bg-[var(--lys-paper-2)] -mx-[24px] md:-mx-[40px] lg:-mx-[48px] xl:-mx-[64px] px-[24px] md:px-[40px] lg:px-[48px] xl:px-[64px] py-80 md:py-120 lg:py-160">
+        <div className="bg-[var(--lys-paper-2)] -mx-[24px] md:-mx-[40px] lg:-mx-[48px] xl:-mx-[64px] px-[24px] md:px-[40px] lg:px-[48px] xl:px-[64px] py-16 md:py-24 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <ScrollReveal direction="left" className="relative order-2 lg:order-1">
               <div className="relative overflow-hidden rounded-[20px] aspect-[4/4.6]">
@@ -289,7 +289,7 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
               <div>
                 <p className="text-[11px] tracking-[0.28em] uppercase text-white/80">Descubra</p>
-                <h2 className="mt-3 font-display text-[44px] md:text-[72px] leading-[0.85] tracking-[-0.04em] uppercase text-white">
+                <h2 className="mt-3 font-display text-[clamp(36px,8vw,72px)] leading-[0.85] tracking-[-0.04em] uppercase text-white">
                   Descubra
                   <br />a Lysandja.
                 </h2>

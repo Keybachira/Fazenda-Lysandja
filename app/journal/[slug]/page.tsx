@@ -21,7 +21,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return (
     <article className="bg-[var(--lys-paper)]">
-      <Section bleed className="pt-[112px] pb-10 bg-[var(--lys-paper-2)] border-b border-[var(--lys-line)]">
+      <Section bleed className="pt-[120px] pb-10 bg-[var(--lys-paper-2)] border-b border-[var(--lys-line)]">
         <div className="container-lys">
           <ScrollReveal direction="up">
             <Link href="/journal" className="text-[11px] tracking-[0.16em] uppercase text-[var(--lys-ink-40)] hover:text-[var(--lys-verde)] transition-colors">

@@ -42,10 +42,10 @@ export default function FazendaPage() {
                   className="absolute group"
                   style={{ left: `${pin.x}%`, top: `${pin.y}%` }}
                 >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--lys-rosa)] text-white text-[11px] font-bold cursor-pointer hover:scale-110 transition-transform shadow-lg z-10 relative">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--lys-rosa)] text-white text-[11px] font-bold cursor-pointer hover:scale-110 transition-transform shadow-lg z-10 relative">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-44 rounded-lg bg-white shadow-xl border border-[var(--lys-line)] p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-44 max-w-[70vw] rounded-lg bg-white shadow-xl border border-[var(--lys-line)] p-3 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
                     <p className="font-semibold text-[12px] text-[var(--lys-verde)]">{pin.label}</p>
                     <p className="text-[11px] text-[var(--lys-ink-60)] mt-1">{pin.desc}</p>
                   </div>
@@ -64,7 +64,7 @@ export default function FazendaPage() {
                 {farmHotspots.map((pin, i) => (
                   <ScrollReveal key={pin.id} direction="right" delay={i * 0.06}>
                     <div className="flex gap-3 items-start">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--lys-rosa)] text-white text-[10px] font-bold">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--lys-rosa)] text-white text-[10px] font-bold">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <div>

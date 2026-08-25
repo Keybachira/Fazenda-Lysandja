@@ -94,7 +94,7 @@ export function Navigation() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-label={open ? "Fechar menu" : "Abrir menu"}
-              className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--lys-line)] bg-white/60 backdrop-blur"
+              className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--lys-line)] bg-white/60 backdrop-blur"
             >
               <span className="relative block h-3.5 w-4">
                 <span
